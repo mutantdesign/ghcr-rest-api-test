@@ -26,4 +26,4 @@ jobs:
       - name: Publish image
         run: docker push ${IMAGE,,} # lowercase IMAGE
 
-      - run: curl https://api.github.com/orgs/${{ github.repository_owner }}/packages?package_type=container&visibility=public -u token:${{ secrets.READ_PACKAGES_TOKEN }}
+      - run: curl https://api.github.com/orgs/${{ github.repository_owner }}/packages?package_type=container -u token:${{ secrets.READ_PACKAGES_TOKEN }}
